@@ -12,6 +12,6 @@ target 'technivance' do
     pod 'PKNetworkActivityController', :git => "https://github.com/dimohamdy/PKNetworkActivityController.git"
     pod 'BRYXBanner'
     pod 'Kingfisher'
-    #pod 'RxGRDB'
+    pod 'RxGRDB'
 
 end

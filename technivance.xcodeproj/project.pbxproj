@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D28FC9F1FC5DEA500F67E55 /* PlayedMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D28FC9E1FC5DEA500F67E55 /* PlayedMatchTableViewCell.swift */; };
 		3D28FCA11FC5E25C00F67E55 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D28FCA01FC5E25C00F67E55 /* MatchTableViewCell.swift */; };
+		3D28FCA91FC634C000F67E55 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D28FCA81FC634C000F67E55 /* AppDatabase.swift */; };
+		3D28FCAB1FC6399200F67E55 /* Leagues.db in Resources */ = {isa = PBXBuildFile; fileRef = 3D28FCAA1FC6399200F67E55 /* Leagues.db */; };
 		3D7CB9A11FC57D1C00ACCAFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CB9A01FC57D1C00ACCAFE /* AppDelegate.swift */; };
 		3D7CB9A61FC57D1C00ACCAFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB9A41FC57D1C00ACCAFE /* Main.storyboard */; };
 		3D7CB9A81FC57D1C00ACCAFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB9A71FC57D1C00ACCAFE /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		3D28FC9E1FC5DEA500F67E55 /* PlayedMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedMatchTableViewCell.swift; sourceTree = "<group>"; };
 		3D28FCA01FC5E25C00F67E55 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		3D28FCA81FC634C000F67E55 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		3D28FCAA1FC6399200F67E55 /* Leagues.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Leagues.db; sourceTree = "<group>"; };
 		3D7CB99D1FC57D1C00ACCAFE /* technivance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = technivance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7CB9A01FC57D1C00ACCAFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7CB9A51FC57D1C00ACCAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,9 +109,11 @@
 		3D7CB99F1FC57D1C00ACCAFE /* technivance */ = {
 			isa = PBXGroup;
 			children = (
+				3D28FCAA1FC6399200F67E55 /* Leagues.db */,
 				3DDD4D461FC5B1F900C246CD /* Model */,
 				3D7CB9B81FC57E2800ACCAFE /* ViewControllers */,
 				3D7CB9CE1FC58C0300ACCAFE /* DataBaseManager.swift */,
+				3D28FCA81FC634C000F67E55 /* AppDatabase.swift */,
 				3D7CB9A01FC57D1C00ACCAFE /* AppDelegate.swift */,
 				3D7CB9A41FC57D1C00ACCAFE /* Main.storyboard */,
 				3D7CB9A71FC57D1C00ACCAFE /* Assets.xcassets */,
@@ -280,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D28FCAB1FC6399200F67E55 /* Leagues.db in Resources */,
 				3D7CB9AB1FC57D1C00ACCAFE /* LaunchScreen.storyboard in Resources */,
 				3D7CB9A81FC57D1C00ACCAFE /* Assets.xcassets in Resources */,
 				3D7CB9A61FC57D1C00ACCAFE /* Main.storyboard in Resources */,
@@ -331,12 +338,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-technivance/Pods-technivance-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKNetworkActivityController/PKNetworkActivityController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGRDB/RxGRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/RxReachability/RxReachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -344,12 +353,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKNetworkActivityController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxReachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -389,6 +400,7 @@
 				3D7CB9CD1FC5898D00ACCAFE /* TeamsModelView.swift in Sources */,
 				3DDD4D411FC5AE2400C246CD /* LeagueTableViewCell.swift in Sources */,
 				3D7CB9CF1FC58C0300ACCAFE /* DataBaseManager.swift in Sources */,
+				3D28FCA91FC634C000F67E55 /* AppDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

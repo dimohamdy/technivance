@@ -8,7 +8,6 @@
 import Foundation 
 import ObjectMapper
 
-
 class Fixture : NSObject, NSCoding, Mappable{
 
 	var links : TeamLink?

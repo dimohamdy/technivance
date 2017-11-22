@@ -10,6 +10,7 @@ import Foundation
 import RxAlamofire
 import RxSwift
 import ObjectMapper
+import GRDB
 
 class TeamModel {
     private let disposeBag = DisposeBag()
@@ -20,6 +21,7 @@ class TeamModel {
             .subscribe(onNext: {  (r, json) in
                 // Convert JSON String to Model
                 let teamMatchsResult:TeamMatchsResult = Mapper<TeamMatchsResult>().map(JSONObject: json)!
+
                 completionWithData(teamMatchsResult.fixtures ?? [])
             }, onError: {  (error) in
                 completionWithError(error)

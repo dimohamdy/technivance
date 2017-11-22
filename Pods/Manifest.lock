@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
   - BRYXBanner (0.8.0)
+  - GRDB.swift (2.3.1)
   - Kingfisher (4.3.1)
   - ObjectMapper (3.1.0)
   - PKNetworkActivityController (0.0.2)
@@ -11,6 +12,12 @@ PODS:
     - Alamofire (~> 4.5)
     - RxSwift (~> 4.0)
   - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxGRDB (0.7.0):
+    - RxGRDB/default (= 0.7.0)
+    - RxSwift (~> 4.0)
+  - RxGRDB/default (0.7.0):
+    - GRDB.swift (~> 2.0)
     - RxSwift (~> 4.0)
   - RxReachability (0.1.4):
     - ReachabilitySwift (~> 4)
@@ -24,6 +31,7 @@ DEPENDENCIES:
   - ObjectMapper
   - PKNetworkActivityController (from `https://github.com/dimohamdy/PKNetworkActivityController.git`)
   - RxAlamofire
+  - RxGRDB
   - RxReachability (from `https://github.com/woostco/RxReachability.git`)
 
 EXTERNAL SOURCES:
@@ -43,15 +51,17 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BRYXBanner: 406c3775789136531da6f3c98058be2f16e08a34
+  GRDB.swift: fa0742c1b3d8aa6e3610a05ebf7c6b9e77589726
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKNetworkActivityController: 6994333904b62edaae7438ac86d7ffe96bef3e82
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxGRDB: 9c90eb5af501804418507e8fc4d81b1e10775c41
   RxReachability: 6e16525bd709156e3af76f12fd0d60ff887bbfc2
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
 
-PODFILE CHECKSUM: 65f00a23de7e80cde28abae3765c89bca5c05c30
+PODFILE CHECKSUM: 2d95dc7755313a4b5d1a53ee8efbc3fa34520162
 
 COCOAPODS: 1.3.1

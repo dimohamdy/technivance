@@ -18,6 +18,7 @@ class TeamsModelView {
         self.teamsModel =  teamsModel
     }
     func getData(dataUrl:DataUrl)  {
+       let id =  dataUrl.href?.slice(from: "competitions/", to: "/teams")
         
         self.teamsModel?.getDataFromAPI(url: dataUrl.href!,completionWithData: { [weak self] leaguesData in
             self?.teams?.value = leaguesData
@@ -26,4 +27,15 @@ class TeamsModelView {
                 
         })
 }
+}
+extension String {
+    
+    func slice(from: String, to: String) -> String? {
+        
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
 }

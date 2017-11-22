@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import GRDB
+
+
+// The shared database pool
+var dbPool: DatabasePool!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        try! setupDatabase(application)
+
         return true
     }
 
@@ -40,7 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    private func setupDatabase(_ application: UIApplication) throws {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
+        let databasePath = documentsPath.appendingPathComponent("db.sqlite")
+        dbPool = try AppDatabase.openDatabase(atPath: databasePath)
+        
+        // Be a nice iOS citizen, and don't consume too much memory
+        // See https://github.com/groue/GRDB.swift/#memory-management
+        dbPool.setupMemoryManagement(in: application)
+    }
 
 }
 
